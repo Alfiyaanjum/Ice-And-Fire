@@ -1,0 +1,56 @@
+<div class="container" style="text-align:center">
+
+ 
+
+
+<div class="row" style="text-align:center">
+  <div class="col-md-12" style="font-size:26px; color: white"><b>Books</b></div>
+  <br><br>
+</div>
+
+
+<div class="row" style="text-align:center" *ngIf="allBooks.length>0">
+  <div *ngFor="let book of allBooks" class="col-md-4">
+      <div class="card">
+          <img class="card-img-top" src="src/assets/books.jpg" alt="Card image">
+          <div class="card-body">
+            <h4 class="card-title">{{book.name||defaultValue}}</h4>
+            <h6 class="card-text">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> Author : {{book.authors||defaultValue}}</li>
+                    <li class="list-group-item">Number of Pages :{{book.numberOfPages||defaultValue}}</li>
+                </ul>
+              </h6>
+            <button routerLink="/books/{{book.url.split('/').pop()}}" type="button" class="btn btn-info">View Details</button>
+      
+          </div>
+        </div>
+    
+
+   <!-- <div class="card text-center" ><br>
+    <div class="card-header">
+        Name: {{book.name||defaultValue}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item"> Published by : {{book.publisher||defaultValue}}</li>
+          <li class="list-group-item">Number of Pages :{{book.numberOfPages||defaultValue}}</li>
+      </ul>
+     </div>     
+     
+      <br><br>
+    </div> -->
+
+
+    <br><br>
+
+  </div>
+</div>
+
+
+
+</div>
+
+

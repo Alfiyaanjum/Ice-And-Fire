@@ -1,0 +1,25 @@
+<div class="container" style="text-align:center">
+  <div class="row" style="text-align:center">
+    <div class="col-md-12" style="font-size:26px;color: white">
+      <b>Characters</b>
+    </div>
+    <br>
+    <br>
+  </div>
+  <div class="row" style="text-align:center" *ngIf="allCharacters.length>0">
+    <div *ngFor="let character of allCharacters" class="col-md-4">
+      <div class="card text-center">
+        <img src="src/assets/houses.jpg">
+        <br>
+        <div class="card-body">
+          Character Name :
+          <h3 class="card-title"> {{character.name || defaultValue}}</h3>
+        </div>
+        <button routerLink="/characters/{{character.url.split('/').pop()}}" type="button" class="btn btn-info">View Details</button>
+        <br>
+        <br>
+      </div>
+      <br>
+      <br>
+    </div>
+  </div>
